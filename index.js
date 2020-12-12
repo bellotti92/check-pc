@@ -1,7 +1,7 @@
 const axios = require("axios");
 const cheerio = require("cheerio");
 const mail = require("nodemailer");
-const cron = require("node-cron");
+/* const cron = require("node-cron"); */
 const url =
   "https://www.pichau.com.br/computadores/pichau-moba/computador-pichau-gamer-odin-ii-ryzen-5-3350g-16gb-2x8-ddr4-ssd-256gb-500w-cooler-sage-komor-rgb";
 
@@ -13,6 +13,8 @@ const getStatus = async () => {
   if (data !== "Produto indisponível") {
     console.log("Produto em estoque. Enviando e-mail...");
     sendMail();
+  } else {
+    process.exit();
   }
 };
 
@@ -54,8 +56,9 @@ const sendMail = async () => {
   });
 
   console.log("Message sent: %s", info.messageId);
+  process.exit();
 };
 
-cron.schedule("*/20 * * * *", () => {
-  getStatus();
-});
+/* cron.schedule("20 * * * *", () => { */
+getStatus();
+/* }); */
