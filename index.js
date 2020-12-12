@@ -6,6 +6,8 @@ const url =
   "https://www.pichau.com.br/computadores/pichau-moba/computador-pichau-gamer-odin-ii-ryzen-5-3350g-16gb-2x8-ddr4-ssd-256gb-500w-cooler-sage-komor-rgb";
 
 const getStatus = async () => {
+  console.log("* Iniciando Pesquisa *");
+
   let data = await getData();
 
   if (data !== "Produto indisponível") {
@@ -54,6 +56,6 @@ const sendMail = async () => {
   console.log("Message sent: %s", info.messageId);
 };
 
-cron.schedule("* * */2 * *", () => {
+cron.schedule("*/20 * * * *", () => {
   getStatus();
 });
