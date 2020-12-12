@@ -15,7 +15,7 @@ const getStatus = async () => {
     sendMail();
   } else {
     console.log("* Produto indisponível *");
-    process.exit();
+    /* process.exit(); */
   }
 };
 
@@ -57,7 +57,7 @@ const sendMail = async () => {
   });
 
   console.log("Message sent: %s", info.messageId);
-  process.exit();
+  /* process.exit(); */
 };
 
 cron.schedule("*/2 * * * *", () => {
