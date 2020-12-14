@@ -3,7 +3,7 @@ const cheerio = require("cheerio");
 const mail = require("nodemailer");
 const cron = require("node-cron");
 const url =
-  "https://www.pichau.com.br/computadores/pichau-moba/computador-pichau-gamer-odin-ii-ryzen-5-3350g-16gb-2x8-ddr4-ssd-256gb-500w-cooler-sage-komor-rgb";
+  "https://www.pichau.com.br/hardware/memorias/memoria-team-group-t-force-rtb-delta-rgb-8gb-1x8-ddr4-3000mhz-tf12d48g3000hc16c01";
 
 const getStatus = async () => {
   console.log("* Script iniciado *");
